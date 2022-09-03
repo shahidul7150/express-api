@@ -16,6 +16,7 @@ router
     .route("/")
     .get(userController.getAllUsers)
     .post(userController.saveUser)
+router.route("/random").get(userController.getRandomUser)
 
 router.route("/:id")
     .get(userController.getsingleUser)

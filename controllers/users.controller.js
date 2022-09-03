@@ -9,6 +9,14 @@ module.exports.getAllUsers = (req, res, next) => {
     const { limit, page } = req.query;
     res.json(users.slice(0, limit))
 };
+
+module.exports.getRandomUser = (req, res, next) => {
+    console.log("random")
+    const randomusers = users[Math.round(Math.random() * users.length)]
+    console.log(users[Math.round(Math.random() * users.length)])
+    res.json(randomusers)
+
+}
 module.exports.saveUser = (req, res) => {
     console.log(req.params)
     // console.log(users)
